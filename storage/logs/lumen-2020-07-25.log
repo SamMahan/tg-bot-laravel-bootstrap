@@ -1,0 +1,24 @@
+[2020-07-25 23:00:24] local.ERROR: Symfony\Component\Console\Exception\NamespaceNotFoundException: There are no commands defined in the "make:" namespace.
+
+Did you mean this?
+    make in C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\vendor\symfony\console\Application.php:574
+Stack trace:
+#0 C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\vendor\symfony\console\Application.php(625): Symfony\Component\Console\Application->findNamespace('make:')
+#1 C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\vendor\symfony\console\Application.php(228): Symfony\Component\Console\Application->find('make::migration')
+#2 C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\vendor\symfony\console\Application.php(140): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\vendor\illuminate\console\Application.php(93): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\vendor\laravel\lumen-framework\src\Console\Kernel.php(116): Illuminate\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 C:\Users\sfmah\Documents\Projects\Misc_Projects\telegram-bot\artisan(35): Laravel\Lumen\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 {main} {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"make:\" namespace.
+
+Did you mean this?
+    make at C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\vendor\\symfony\\console\\Application.php:574)
+[stacktrace]
+#0 C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\vendor\\symfony\\console\\Application.php(625): Symfony\\Component\\Console\\Application->findNamespace('make:')
+#1 C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\vendor\\symfony\\console\\Application.php(228): Symfony\\Component\\Console\\Application->find('make::migration')
+#2 C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\vendor\\symfony\\console\\Application.php(140): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\vendor\\illuminate\\console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\vendor\\laravel\\lumen-framework\\src\\Console\\Kernel.php(116): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\sfmah\\Documents\\Projects\\Misc_Projects\\telegram-bot\\artisan(35): Laravel\\Lumen\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
