@@ -12,7 +12,7 @@ class Controller extends BaseController
         
         $requestFactory = new \Http\Factory\Guzzle\RequestFactory();
         $streamFactory = new \Http\Factory\Guzzle\StreamFactory();
-        $client = new Http\Adapter\Guzzle6\Client();
+        $client = new \Http\Adapter\Guzzle6\Client();
         $apiClient = new \TgBotApi\BotApiBase\ApiClient($requestFactory, $streamFactory, $client);
         $bot = new \TgBotApi\BotApiBase\BotApi($botKey, $apiClient, new \TgBotApi\BotApiBase\BotApiNormalizer());
         
