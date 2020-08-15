@@ -9,7 +9,7 @@ use Unirest;
 class Controller extends BaseController
 {
     public function route(Request $request) {
-        
+        try{
         $requestFactory = new \Http\Factory\Guzzle\RequestFactory();
         $streamFactory = new \Http\Factory\Guzzle\StreamFactory();
         $client = new \Http\Adapter\Guzzle6\Client();
@@ -17,10 +17,13 @@ class Controller extends BaseController
         $bot = new \TgBotApi\BotApiBase\BotApi($botKey, $apiClient, new \TgBotApi\BotApiBase\BotApiNormalizer());
         
         $this->handleCommands($request, $bot);
+    } catch (\Throwable $err) {
+        error_log(print_r($err, true));
+    }
     }
 
     private function handleCommands($request, $bot) {
-        
+       
         if ($request->input('message')) {
             $message = $request->input('message');
             $sanitizedString = $this->sanitizeString($message);
@@ -30,6 +33,7 @@ class Controller extends BaseController
             ];
         }
         return;
+    
     }
 
     public function sanitizeString($message){
