@@ -10,17 +10,17 @@ class Controller extends BaseController
 {
     public function route(Request $request) {
         try{
-            $botkey = getenv('BOT_TOKEN');
-        $requestFactory = new \Http\Factory\Guzzle\RequestFactory();
-        $streamFactory = new \Http\Factory\Guzzle\StreamFactory();
-        $client = new \Http\Adapter\Guzzle6\Client();
-        $apiClient = new \TgBotApi\BotApiBase\ApiClient($requestFactory, $streamFactory, $client);
-        $bot = new \TgBotApi\BotApiBase\BotApi($botKey, $apiClient, new \TgBotApi\BotApiBase\BotApiNormalizer());
-        
-        $this->handleCommands($request, $bot);
-    } catch (\Throwable $err) {
-        error_log(print_r($err, true));
-    }
+            $botKey = getenv('BOT_TOKEN');
+            $requestFactory = new \Http\Factory\Guzzle\RequestFactory();
+            $streamFactory = new \Http\Factory\Guzzle\StreamFactory();
+            $client = new \Http\Adapter\Guzzle6\Client();
+            $apiClient = new \TgBotApi\BotApiBase\ApiClient($requestFactory, $streamFactory, $client);
+            $bot = new \TgBotApi\BotApiBase\BotApi($botKey, $apiClient, new \TgBotApi\BotApiBase\BotApiNormalizer());
+            
+            $this->handleCommands($request, $bot);
+        } catch (\Throwable $err) {
+            error_log(print_r($err, true));
+        }
     }
 
     private function handleCommands($request, $bot) {
