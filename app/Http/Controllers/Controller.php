@@ -26,7 +26,7 @@ class Controller extends BaseController
             $sanitizedString = $this->sanitizeString($message);
 
             $commandArr = [
-                '/example' => function($request) { \App\Services\TelegramBot\ExampleService::runCommand($bot, $request); }
+                // '/example' => function($request) { \App\Services\TelegramBot\ExampleService::runCommand($bot, $request); }
             ];
         }
         return;
