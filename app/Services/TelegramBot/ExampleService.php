@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 class ExampleService extends TelegramBotService
 {
 
-    public function runCommand(
+    public static function runCommand(
         \TgBotApi\BotApiBase\BotApi $bot, 
         Request $request
     ) {
         
-        $message = $this->request->input('message');
+        $message = $request->input('message');
         $chat = $message['chat'];
-        $this->chatId = $chat['id'];
+        $chatId = $chat['id'];
 
         \TgBotApi\BotApiBase\Method\SendMessageMethod::create();
         $bot->send(\TgBotApi\BotApiBase\Method\SendMessageMethod::create($chatId, 'howdy'));

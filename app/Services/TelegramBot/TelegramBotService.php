@@ -10,7 +10,7 @@ abstract class TelegramBotService
         Request $request
     );
 
-    public abstract function checkAction(
+    public static abstract function checkAction(
         \TgBotApi\BotApiBase\BotApi $bot, 
         Request $request
     );
