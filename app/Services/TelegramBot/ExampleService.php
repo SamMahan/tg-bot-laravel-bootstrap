@@ -17,7 +17,6 @@ class ExampleService extends TelegramBotService
         $chat = $message['chat'];
         $chatId = $chat['id'];
 
-        \TgBotApi\BotApiBase\Method\SendMessageMethod::create();
         $bot->send(\TgBotApi\BotApiBase\Method\SendMessageMethod::create($chatId, 'howdy'));
         return true;
     }
