@@ -30,11 +30,11 @@ class Controller extends BaseController
             $sanitizedString = $this->sanitizeString($message);
 
             $commandArr = [
-                '/example' => function($request) { \App\Services\TelegramBot\ExampleService::runCommand($bot, $request); }
+                '/example' => function($bot, $request) { \App\Services\TelegramBot\ExampleService::runCommand($bot, $request); }
             ];
+            $commandArr[$sanitizedString]($bot, $request);
         }
         return;
-    
     }
 
     public function sanitizeString($message){
