@@ -3,9 +3,14 @@
 namespace App\Services\TelegramBot;
 use Illuminate\Http\Request;
 
-abstract class TelegramBotService extends Controller
+abstract class TelegramBotService
 {
     public abstract static function runCommand(
+        \TgBotApi\BotApiBase\BotApi $bot, 
+        Request $request
+    );
+
+    public abstract function checkAction(
         \TgBotApi\BotApiBase\BotApi $bot, 
         Request $request
     );
