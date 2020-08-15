@@ -10,6 +10,7 @@ class Controller extends BaseController
 {
     public function route(Request $request) {
         try{
+            $botkey = getenv('BOT_TOKEN');
         $requestFactory = new \Http\Factory\Guzzle\RequestFactory();
         $streamFactory = new \Http\Factory\Guzzle\StreamFactory();
         $client = new \Http\Adapter\Guzzle6\Client();
